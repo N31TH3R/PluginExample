@@ -11,7 +11,7 @@
              Name="MyToolWindow">
     <Grid>
         <Menu Grid.ColumnSpan="2" >
-            <MenuItem Header="Открыть файл" Click="OpenFile"></MenuItem>
+            <MenuItem Header="Open File" Click="OpenFile"></MenuItem>
         </Menu>
         <StackPanel Margin="20" Orientation="Vertical">
             <TextBox Name="txtEditor" />
