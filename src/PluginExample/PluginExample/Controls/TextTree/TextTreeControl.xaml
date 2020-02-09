@@ -8,10 +8,14 @@
              Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
-             Name="MyToolWindow">
+             Name="TextTreeTool">
     <Grid>
         <Menu Grid.ColumnSpan="2" >
-            <MenuItem Header="Open File" Click="OpenFile"></MenuItem>
+            <MenuItem Header="Open File" Click="OpenFile" InputGestureText="ctrl+o">
+                <MenuItem.InputBindings>
+                    <KeyBinding Key="O" Modifiers="control"/>
+                </MenuItem.InputBindings>
+            </MenuItem>
         </Menu>
         <StackPanel Margin="20" Orientation="Vertical">
             <TextBox Name="txtEditor" />
