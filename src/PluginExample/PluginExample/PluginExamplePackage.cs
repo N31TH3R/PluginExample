@@ -25,6 +25,8 @@ namespace PluginExample
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(PluginExamplePackage.PackageGuidString)]
+    [ProvideMenuResource("Menus.ctmenu", 1)]
+    [ProvideToolWindow(typeof(TextTree))]
     public sealed class PluginExamplePackage : AsyncPackage
     {
         /// <summary>
@@ -46,6 +48,7 @@ namespace PluginExample
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            await TextTreeCommand.InitializeAsync(this);
         }
 
         #endregion
